@@ -1,0 +1,25 @@
+service: serverless-express-prisma-boilerplate
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+
+provider:
+  name: aws
+
+functions:
+  hello:
+    handler: src/app.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true

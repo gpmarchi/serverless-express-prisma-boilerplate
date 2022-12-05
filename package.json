@@ -1,0 +1,39 @@
+{
+  "name": "serverless-express-prisma-boilerplate",
+  "version": "1.0.0",
+  "description": "Serverless aws-nodejs-typescript template",
+  "scripts": {
+    "dev": "serverless offline --reloadHandler",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=14.15.0"
+  },
+  "dependencies": {
+    "@middy/core": "^3.4.0",
+    "@middy/http-json-body-parser": "^3.4.0",
+    "express": "^4.18.2",
+    "serverless-http": "^3.1.0"
+  },
+  "devDependencies": {
+    "@serverless/typescript": "^3.0.0",
+    "@types/aws-lambda": "^8.10.71",
+    "@types/express": "^4.17.14",
+    "@types/node": "^14.14.25",
+    "copy-webpack-plugin": "^11.0.0",
+    "esbuild": "^0.14.11",
+    "json-schema-to-ts": "^1.5.0",
+    "serverless": "^3.0.0",
+    "serverless-esbuild": "^1.23.3",
+    "serverless-offline": "^12.0.0",
+    "serverless-webpack": "^5.11.0",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.9.0",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
+    "typescript": "^4.1.3",
+    "webpack": "^5.75.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "license": "MIT"
+}
