@@ -3,10 +3,13 @@ service: serverless-express-prisma-boilerplate
 plugins:
   - serverless-offline
   - serverless-webpack
+  - serverless-webpack-prisma
+  - serverless-dotenv-plugin
 
 custom:
   webpack:
     webpackConfig: ./webpack.config.js
+    includeModules: true
 
 provider:
   name: aws
@@ -14,6 +17,7 @@ provider:
 functions:
   hello:
     handler: src/app.handler
+    memorySize: 128
     events:
       - http:
           path: /
@@ -23,3 +27,10 @@ functions:
           path: /{proxy+}
           method: ANY
           cors: true
+
+package:
+  patterns:
+    - "!node_modules/.prisma/client/libquery_engine-*"
+    - "node_modules/.prisma/client/libquery_engine-rhel-*"
+    - "!node_modules/prisma/libquery_engine-*"
+    - "!node_modules/@prisma/engines/**"

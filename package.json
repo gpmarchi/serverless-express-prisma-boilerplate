@@ -4,6 +4,8 @@
   "description": "Serverless aws-nodejs-typescript template",
   "scripts": {
     "dev": "serverless offline --reloadHandler",
+    "generate:db": "prisma generate",
+    "migrate:db": "prisma migrate dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -12,7 +14,9 @@
   "dependencies": {
     "@middy/core": "^3.4.0",
     "@middy/http-json-body-parser": "^3.4.0",
+    "@prisma/client": "4.7.1",
     "express": "^4.18.2",
+    "prisma": "^4.7.1",
     "serverless-http": "^3.1.0"
   },
   "devDependencies": {
@@ -34,9 +38,11 @@
     "json-schema-to-ts": "^1.5.0",
     "prettier": "^2.8.0",
     "serverless": "^3.0.0",
+    "serverless-dotenv-plugin": "^4.0.2",
     "serverless-esbuild": "^1.23.3",
     "serverless-offline": "^12.0.0",
     "serverless-webpack": "^5.11.0",
+    "serverless-webpack-prisma": "^1.1.1",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.9.0",
