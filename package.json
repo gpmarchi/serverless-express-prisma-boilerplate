@@ -6,6 +6,8 @@
     "dev": "serverless offline --reloadHandler",
     "generate:db": "prisma generate",
     "migrate:db": "prisma migrate dev",
+    "deploy": "serverless deploy --verbose",
+    "undeploy": "serverless remove",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
